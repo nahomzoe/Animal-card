@@ -1,32 +1,40 @@
 import "./App.css";
+import { Component } from "react";
 
 import AnimalCard from "./Animal-Card";
-import animals from "./animals-array";
+import { animals } from "./animals-array";
 
-const App = (props) => {
-  /*const addLike = (animal) => {
+class App extends Component {
+  state = {
+    animalsState: animals,
+  };
+
+  addLike(animal) {
     animal.likes = animal.likes + 1;
-    setState([...animals, animal]);
-  };*/
+    this.setState({ ...this.state.animalsState, animal });
+  }
 
-  return (
-    <main>
-      <div>
-        <h1>Animals</h1>
-      </div>
-      <div className="container">
-        {animals.map((animal) => (
-          <AnimalCard
-            key={animal.name}
-            name={animal.name}
-            like={animal.likes}
-            /*addLike={() => addLike()}
-            animal={animal}*/
-          />
-        ))}
-      </div>
-    </main>
-  );
-};
+  render() {
+    const animalArray = this.state.animalsState;
+    return (
+      <main>
+        <div>
+          <h1>Animals</h1>
+        </div>
+        <div className="container">
+          {animalArray.map((animal) => (
+            <AnimalCard
+              key={animal.name}
+              name={animal.name}
+              like={animal.likes}
+              addLikeOnClick={this.addLike.bind(this)}
+              animal={animal}
+            />
+          ))}
+        </div>
+      </main>
+    );
+  }
+}
 
 export default App;

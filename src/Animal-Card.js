@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 const AnimalCard = (props) => {
+  // const animal = props.animal;
+  // const addLikeOnClick = props.addLikeOnClick;
+  const { animal, addLikeOnClick } = props;
   return (
     <div className="card">
       <img src={`https://source.unsplash.com/1600x900/?${props.name}`} alt="" />
@@ -15,7 +18,7 @@ const AnimalCard = (props) => {
           <span>{props.like}</span>
         </div>
 
-        <button>Add like</button>
+        <button onClick={() => addLikeOnClick(animal)}>Add like</button>
       </div>
     </div>
   );

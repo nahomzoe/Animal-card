@@ -1,13 +1,13 @@
-const animals = [
+export const animals = [
   { name: "alligator", likes: 0 },
-  { name: "alpaca", likes: 9 },
+  { name: "alpaca", likes: 0 },
   { name: "ant", likes: 0 },
   { name: "anteater", likes: 0 },
   { name: "antelope", likes: 0 },
   { name: "ape", likes: 0 },
   { name: "armadillo", likes: 0 },
   { name: "baboon", likes: 0 },
-  { name: "badger", likes: 0 },
+  { name: "dove", likes: 0 },
   { name: "bat", likes: 0 },
   { name: "bear", likes: 0 },
   { name: "beaver", likes: 0 },
@@ -119,5 +119,3 @@ const animals = [
   { name: "yak", likes: 0 },
   { name: "zebra", likes: 0 },
 ];
-
-export default animals;
