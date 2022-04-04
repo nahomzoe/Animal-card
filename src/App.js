@@ -6,16 +6,24 @@ import { animals } from "./animals-array";
 
 class App extends Component {
   state = {
-    animalsState: animals,
+    animals: animals,
   };
 
   addLike(animal) {
     animal.likes = animal.likes + 1;
-    this.setState({ ...this.state.animalsState, animal });
+    this.setState({ ...this.state.animals, animal });
   }
+  removeHandler = (animal) => {
+    const updatedArray = this.state.animals.filter(
+      (a) => a.name !== animal.name
+    );
+    this.setState({
+      animals: updatedArray,
+    });
+  };
 
   render() {
-    const animalArray = this.state.animalsState;
+    const animalArray = this.state.animals;
     return (
       <main>
         <div>
@@ -28,6 +36,7 @@ class App extends Component {
               name={animal.name}
               like={animal.likes}
               addLikeOnClick={this.addLike.bind(this)}
+              remove={this.removeHandler.bind(this)}
               animal={animal}
             />
           ))}
