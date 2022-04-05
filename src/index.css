@@ -20,8 +20,8 @@ body {
   padding-top: 5rem;
 }
 h1 {
-  font-family: "Tajawal", sans-serif;
   text-align: center;
+  font-family: "Tajawal", sans-serif;
 }
 h2 {
   font-family: "Tajawal", sans-serif;
@@ -39,6 +39,7 @@ h2 {
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   padding: 2rem;
+  margin-top: 4rem;
 }
 .card {
   background-color: var(--other-color);
@@ -117,4 +118,18 @@ h2 {
   font-size: 16px;
   user-select: none;
   touch-action: manipulation;
+}
+
+main div .input {
+  display: flex;
+  justify-content: center;
+}
+main div input {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: gray;
+  font-size: large;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }

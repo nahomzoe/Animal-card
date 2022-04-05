@@ -11,10 +11,12 @@ const AnimalCard = (props) => {
         src={`https://source.unsplash.com/2000x1000/?${props.name}`}
         alt=""
       />
-      <button className="removeButton" onClick={() => remove(animal)}>
+
+      <button className="removeButton" onClick={remove}>
         X
       </button>
       <h2>{props.name}</h2>
+
       <div className="imgNumButton">
         <div className="imgNum">
           <img
@@ -22,14 +24,13 @@ const AnimalCard = (props) => {
             src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
             alt=""
           />
+
           <span>{props.like}</span>
         </div>
 
-        <button
-          className="addLikeButton"
-          onClick={() => addLikeOnClick(animal)}
-        >
-          Add like
+        <button className="addLikeButton" onClick={addLikeOnClick}>
+          {" "}
+          Add like{" "}
         </button>
       </div>
     </div>
